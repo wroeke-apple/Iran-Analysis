@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iran Geopolitical Intelligence Report — March 2026</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #161b22;
+      --border: #21262d;
+      --accent: #c9392a;
+      --accent2: #e07b2a;
+      --gold: #d4a017;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --green: #3fb950;
+      --yellow: #d29922;
+      --red: #f85149;
+      --blue: #58a6ff;
+      --purple: #a371f7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+    }
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #1a0a0a 0%, #0d1117 60%);
+      border-bottom: 2px solid var(--accent);
+      padding: 40px 48px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(201,57,42,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .header-flag { font-size: 48px; margin-bottom: 12px; }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+    }
+    .header h1 span { color: var(--accent); }
+    .header .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .header .date-badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: rgba(201,57,42,0.15);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    /* NAV TABS */
+    .nav {
+      background: var(--panel);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    .nav-tab {
+      padding: 16px 22px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .nav-tab:hover { color: var(--text); }
+    .nav-tab.active {
+      color: var(--text);
+      border-bottom-color: var(--accent);
+    }
+    /* LAYOUT */
+    .main { padding: 32px 48px; max-width: 1200px; margin: 0 auto; }
+    .section { display: none; }
+    .section.active { display: block; }
+    /* STAT CARDS */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .stat-card.red::before { background: var(--red); }
+    .stat-card.yellow::before { background: var(--yellow); }
+    .stat-card.blue::before { background: var(--blue); }
+    .stat-card.green::before { background: var(--green); }
+    .stat-card.purple::before { background: var(--purple); }
+    .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .stat-value { font-size: 26px; font-weight: 800; color: #fff; }
+    .stat-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    /* CARDS */
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card h2 .icon { font-size: 18px; }
+    .card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 16px 0 8px;
+    }
+    .card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 24px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .tl-item {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -21px;
+      top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+    }
+    .tl-item.yellow::before { background: var(--yellow); }
+    .tl-item.blue::before { background: var(--blue); }
+    .tl-item.green::before { background: var(--green); }
+    .tl-item.red::before { background: var(--red); }
+    .tl-date {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .tl-item.yellow .tl-date { color: var(--yellow); }
+    .tl-item.blue .tl-date { color: var(--blue); }
+    .tl-item.green .tl-date { color: var(--green); }
+    .tl-item.red .tl-date { color: var(--red); }
+    .tl-title { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .tl-body { font-size: 13px; color: var(--muted); }
+    /* SCENARIO CARDS */
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 8px;
+    }
+    .scenario-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.1s;
+    }
+    .scenario-card:hover { transform: translateY(-2px); }
+    .scenario-card.s1 { border-top: 3px solid var(--red); }
+    .scenario-card.s2 { border-top: 3px solid var(--yellow); }
+    .scenario-card.s3 { border-top: 3px solid var(--green); }
+    .scenario-card.s4 { border-top: 3px solid var(--purple); }
+    .scenario-card:hover.s1 { border-color: var(--red); }
+    .scenario-card:hover.s2 { border-color: var(--yellow); }
+    .scenario-card:hover.s3 { border-color: var(--green); }
+    .scenario-card:hover.s4 { border-color: var(--purple); }
+    .sc-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .s1 .sc-label { color: var(--red); }
+    .s2 .sc-label { color: var(--yellow); }
+    .s3 .sc-label { color: var(--green); }
+    .s4 .sc-label { color: var(--purple); }
+    .sc-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .sc-prob {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .s1 .sc-prob { background: rgba(248,81,73,0.15); color: var(--red); }
+    .s2 .sc-prob { background: rgba(210,153,34,0.15); color: var(--yellow); }
+    .s3 .sc-prob { background: rgba(63,185,80,0.15); color: var(--green); }
+    .s4 .sc-prob { background: rgba(163,113,247,0.15); color: var(--purple); }
+    .sc-body { font-size: 13px; color: var(--muted); line-height: 1.7; }
+    .sc-impacts { margin-top: 14px; }
+    .sc-impact-item {
+      font-size: 12px;
+      color: var(--muted);
+      padding: 6px 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 8px;
+    }
+    .sc-impact-item .dot { color: var(--accent); font-weight: 700; }
+    /* RISK METER */
+    .risk-bar-wrapper { margin-bottom: 16px; }
+    .risk-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .risk-bar-label strong { color: var(--text); }
+    .risk-bar-bg {
+      background: var(--border);
+      border-radius: 4px;
+      height: 8px;
+      overflow: hidden;
+    }
+    .risk-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 1s ease;
+    }
+    /* TAG */
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      margin: 2px;
+    }
+    .tag-red { background: rgba(248,81,73,0.15); color: var(--red); border: 1px solid rgba(248,81,73,0.3); }
+    .tag-yellow { background: rgba(210,153,34,0.15); color: var(--yellow); border: 1px solid rgba(210,153,34,0.3); }
+    .tag-blue { background: rgba(88,166,255,0.15); color: var(--blue); border: 1px solid rgba(88,166,255,0.3); }
+    .tag-green { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
+    .tag-purple { background: rgba(163,113,247,0.15); color: var(--purple); border: 1px solid rgba(163,113,247,0.3); }
+    /* GRID 2-COL */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+    /* ALERT */
+    .alert {
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .alert-red { background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.3); }
+    .alert-yellow { background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.3); }
+    .alert-blue { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.3); }
+    .alert-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .alert-text { color: var(--muted); line-height: 1.6; }
+    .alert-text strong { color: var(--text); }
+    /* PROXY MAP */
+    .proxy-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .proxy-item:last-child { border-bottom: none; }
+    .proxy-flag { font-size: 26px; }
+    .proxy-info { flex: 1; }
+    .proxy-name { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .proxy-status { font-size: 12px; color: var(--muted); }
+    .proxy-strength {
+      width: 80px;
+      text-align: right;
+    }
+    .proxy-pct {
+      font-size: 13px;
+      font-weight: 700;
+    }
+    /* SOURCES */
+    .sources {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 32px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .sources h4 { color: var(--text); margin-bottom: 10px; font-size: 13px; }
+    .sources a { color: var(--blue); text-decoration: none; margin-right: 14px; display: inline-block; margin-bottom: 6px; }
+    .sources a:hover { text-decoration: underline; }
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 32px;
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+    /* CONNECTION LINE */
+    .connection-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .connection-row:last-child { border-bottom: none; }
+    .conn-node {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .conn-arrow { color: var(--muted); font-size: 16px; }
+    .conn-label { font-size: 12px; color: var(--muted); flex: 1; }
+    /* CALLOUT */
+    .callout {
+      background: rgba(201,57,42,0.06);
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .callout strong { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-flag">🇮🇷</div>
+  <h1>Iran at the <span>Inflection Point</span></h1>
+  <div class="subtitle">Geopolitical Intelligence Report · US Policy &amp; Macro Lens</div>
+  <div class="date-badge">📅 As of March 5, 2026</div>
+</div>
+
+<!-- NAV -->
+<div class="nav" id="nav">
+  <div class="nav-tab active" onclick="showSection('overview')">Overview</div>
+  <div class="nav-tab" onclick="showSection('nuclear')">☢️ Nuclear &amp; Diplomacy</div>
+  <div class="nav-tab" onclick="showSection('domestic')">🏛️ Domestic</div>
+  <div class="nav-tab" onclick="showSection('proxies')">🌐 Regional Proxies</div>
+  <div class="nav-tab" onclick="showSection('irgc')">⚔️ IRGC Deep Dive</div>
+  <div class="nav-tab" onclick="showSection('usgov')">🦅 US Policy</div>
+  <div class="nav-tab" onclick="showSection('superpowers')">⚡ Superpowers</div>
+  <div class="nav-tab" onclick="showSection('economy')">📈 Economy</div>
+  <div class="nav-tab" onclick="showSection('scenarios')">🔮 Scenarios</div>
+  <div class="nav-tab" onclick="showSection('grandstrategy')">🌍 Grand Strategy</div>
+  <div class="nav-tab" onclick="showSection('markets')">📊 Market Signals</div>
+</div>
+
+<div class="main">
+
+<!-- ===== OVERVIEW ===== -->
+<div class="section active" id="overview">
+
+  <div class="alert alert-red">
+    <div class="alert-icon">🚨</div>
+    <div class="alert-text"><strong>Breaking developments:</strong> On February 28, 2026, a joint US-Israel strike killed Supreme Leader Ali Khamenei, ending his 36-year rule. Iran's Assembly of Experts is now in emergency session to select a successor. Iran faces simultaneous nuclear crisis, economic collapse, mass protests, and a leadership vacuum — the most volatile inflection point in its history since 1979.</div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card red">
+      <div class="stat-label">Nuclear Breakout Time</div>
+      <div class="stat-value">&lt;1 wk</div>
+      <div class="stat-sub">Pre-strike (IAEA, Nov 2024)</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-label">60% Enriched Uranium</div>
+      <div class="stat-value">~460 kg</div>
+      <div class="stat-sub">≈11 weapons' worth (pre-strike)</div>
+    </div>
+    <div class="stat-card yellow">
+      <div class="stat-label">Inflation Rate</div>
+      <div class="stat-value">68%</div>
+      <div class="stat-sub">Feb 2026 — multi-decade high</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-label">Currency Collapse</div>
+      <div class="stat-value">1.75M</div>
+      <div class="stat-sub">Rials per USD (vs 42K in 2018)</div>
+    </div>
+    <div class="stat-card yellow">
+      <div class="stat-label">Protest Deaths</div>
+      <div class="stat-value">7,015+</div>
+      <div class="stat-sub">Confirmed since Dec 2025</div>
+    </div>
+    <div class="stat-card blue">
+      <div class="stat-label">Global Oil Price</div>
+      <div class="stat-value">~$55</div>
+      <div class="stat-sub">EIA 2026 forecast (↓18% from 2025)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">⏱️</span> Key Events Timeline</h2>
+    <div class="timeline">
+      <div class="tl-item blue">
+        <div class="tl-date">Oct 2023</div>
+        <div class="tl-title">Hamas October 7 Attack Triggers Regional Escalation</div>
+        <div class="tl-body">Hamas, an Iranian-backed proxy, launches unprecedented attack on Israel. Begins unraveling of Iran's "Axis of Resistance" deterrence model through Israeli counter-campaign.</div>
+      </div>
+      <div class="tl-item yellow">
+        <div class="tl-date">Dec 2024</div>
+        <div class="tl-title">Assad Regime Falls in Syria</div>
+        <div class="tl-body">A major Iranian ally and logistics hub for Hezbollah collapses. Iran loses a critical land corridor to Lebanon, severely weakening the proxy network.</div>
+      </div>
+      <div class="tl-item yellow">
+        <div class="tl-date">Jan 2025</div>
+        <div class="tl-title">Trump Reimposed Maximum Pressure Sanctions</div>
+        <div class="tl-body">Trump administration resumes maximum pressure policy targeting Iranian oil shadow fleet, Chinese teapot refineries, and financial networks.</div>
+      </div>
+      <div class="tl-item blue">
+        <div class="tl-date">Apr–Jun 2025</div>
+        <div class="tl-title">US–Iran Nuclear Talks (5 Rounds via Oman)</div>
+        <div class="tl-body">Talks focus on enrichment limits, stockpile transfer, and verification. Iran insists on "inalienable right" to enrich; US demands zero enrichment on Iranian soil.</div>
+      </div>
+      <div class="tl-item red">
+        <div class="tl-date">Jun 21–22, 2025</div>
+        <div class="tl-title">US Strikes Iranian Nuclear Facilities</div>
+        <div class="tl-body">US attacks Fordow, Natanz, and Isfahan. Trump claims sites "obliterated." IAEA says "severe but not total damage." Iran suspends nuclear talks indefinitely.</div>
+      </div>
+      <div class="tl-item red">
+        <div class="tl-date">Oct 2025</div>
+        <div class="tl-title">Iran Formally Terminates JCPOA</div>
+        <div class="tl-body">Iran officially ends the 2015 nuclear deal after 10 years. UN diplomacy stalls with "no agreement on way forward."</div>
+      </div>
+      <div class="tl-item yellow">
+        <div class="tl-date">Dec 2025</div>
+        <div class="tl-title">Mass Protests Erupt Across All 31 Provinces</div>
+        <div class="tl-body">Economic collapse, 70%+ food inflation, and currency freefall trigger the largest protests since 2022. Over 7,000 confirmed dead in crackdowns by Feb 2026.</div>
+      </div>
+      <div class="tl-item red">
+        <div class="tl-date">Feb 28, 2026</div>
+        <div class="tl-title">US–Israel Strike Kills Khamenei</div>
+        <div class="tl-body">Joint operation using CIA intelligence assassinates Supreme Leader Ali Khamenei. Celebrations erupt in Iranian cities. An Interim Leadership Council forms. Assembly of Experts convenes to elect successor.</div>
+      </div>
+      <div class="tl-item red">
+        <div class="tl-date">Mar 5, 2026</div>
+        <div class="tl-title">Succession Crisis Ongoing — TODAY</div>
+        <div class="tl-body">Assembly of Experts nears selecting new Supreme Leader. Front-runner: Mojtaba Khamenei (son of Ali). Russia and China condemn strikes in UN Security Council. IAEA cannot access damaged nuclear sites.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🔗</span> How It All Connects</h2>
+    <div class="connection-row">
+      <div class="conn-node">🛢️ Max Pressure Sanctions</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-label">Crushes Iranian oil revenue → accelerates economic collapse → fuels domestic protests → weakens regime capacity to fund proxies</div>
+    </div>
+    <div class="connection-row">
+      <div class="conn-node">🌎 Venezuela Intervention</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-label">Seizes Venezuelan oil + disrupts Iran-Venezuela-China oil triangle → reduces Iranian workarounds for sanctions enforcement</div>
+    </div>
+    <div class="connection-row">
+      <div class="conn-node">⚡ US Nuclear Strikes</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-label">Destroys nuclear facilities → derails weapons timeline → kills Khamenei → creates power vacuum → regime legitimacy crisis</div>
+    </div>
+    <div class="connection-row">
+      <div class="conn-node">💰 Low Oil Prices (~$55)</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-label">OPEC+ oversupply gives Trump geopolitical flexibility; punishes Iran, Russia, Venezuela simultaneously; limits Iran's economic recovery</div>
+    </div>
+    <div class="connection-row">
+      <div class="conn-node">🐉 China &amp; Russia Restraint</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-label">Both condemn strikes rhetorically but provide no military support → Iran isolated; INSTC/BRI disrupted; global trade routes uncertain</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NUCLEAR ===== -->
+<div class="section" id="nuclear">
+  <div class="alert alert-red">
+    <div class="alert-icon">☢️</div>
+    <div class="alert-text"><strong>Status:</strong> JCPOA formally terminated (Oct 2025). US military strikes caused "severe but not total" damage. IAEA cannot access Natanz, Fordow, or Isfahan. Iran's nuclear material "still there in large quantities" (IAEA, Feb 2026).</div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card red">
+      <div class="stat-label">Enrichment Level</div>
+      <div class="stat-value">60%</div>
+      <div class="stat-sub">Weapons-grade = 90%. JCPOA limit = 3.67%</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-label">Pre-Strike Stockpile</div>
+      <div class="stat-value">972 lbs</div>
+      <div class="stat-sub">60%-enriched uranium (Jun 2025)</div>
+    </div>
+    <div class="stat-card yellow">
+      <div class="stat-label">Breakout Threshold</div>
+      <div class="stat-value">~92 lbs</div>
+      <div class="stat-sub">Needed for one weapon (IAEA metric)</div>
+    </div>
+    <div class="stat-card blue">
+      <div class="stat-label">JCPOA Status</div>
+      <div class="stat-value">Terminated</div>
+      <div class="stat-sub">Oct 2025 — officially ended after 10 years</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2><span class="icon">💬</span> US–Iran Talks (Apr–Jun 2025)</h2>
+      <p>Five rounds of indirect talks mediated by Oman — the first substantive engagement since the Trump administration restored maximum pressure in early 2025.</p>
+      <h3>Key Sticking Points</h3>
+      <p>The US demanded <strong>zero enrichment on Iranian soil</strong> and proposed a regional consortium model. Iran countered that enrichment is an "inalienable right" — a red line that cannot be crossed. Iran's lead negotiator reportedly told US counterparts that its 460kg of 60%-enriched uranium could produce 11 nuclear bombs.</p>
+      <h3>Mediator Framework</h3>
+      <p>Qatar, Turkey, and Egypt proposed a compromise: Iran would commit to zero enrichment for 3 years, then limit to &lt;1.5%, and transfer its enriched stockpile to a third country. Iran rejected the proposal as "unbalanced."</p>
+      <h3>Collapse</h3>
+      <p>US strikes on June 21–22 ended talks indefinitely. Iran suspended all diplomatic engagement on the nuclear file.</p>
+    </div>
+    <div class="card">
+      <h2><span class="icon">💥</span> June 2025 US Military Strikes</h2>
+      <p>Overnight strikes targeted Iran's three main nuclear sites:</p>
+      <div class="tl-item red" style="margin-top:12px; padding-left:0">
+        <div class="tl-title" style="color:var(--red)">Fordow</div>
+        <div class="tl-body">Deeply buried enrichment facility. Struck with bunker-buster munitions.</div>
+      </div>
+      <div class="tl-item yellow" style="padding-left:0">
+        <div class="tl-title" style="color:var(--yellow)">Natanz</div>
+        <div class="tl-body">Iran's main uranium enrichment complex. Severe damage reported.</div>
+      </div>
+      <div class="tl-item blue" style="padding-left:0">
+        <div class="tl-title" style="color:var(--blue)">Isfahan</div>
+        <div class="tl-body">Uranium conversion and fuel fabrication site.</div>
+      </div>
+      <p style="margin-top:14px">IAEA Director Grossi (Feb 2026): "Severe damage, not total damage." Nuclear material remains "in large quantities" but "some less accessible." IAEA inspectors in Iran but <strong>cannot access damaged sites</strong>.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">📋</span> IAEA &amp; NPT Compliance Status</h2>
+    <p>IAEA Director Grossi warned in early 2026 that he may declare Iran "in non-compliance" with the Nuclear Non-Proliferation Treaty. Iran's Foreign Ministry responded that there is "no established procedure" for inspecting damaged nuclear facilities — effectively blocking international verification.</p>
+    <div class="callout">
+      <strong>Bottom line:</strong> The strikes set back Iran's weapons timeline but did not eliminate the program. With IAEA access denied, the international community has no verified picture of Iran's current nuclear status. This ambiguity itself is a source of ongoing risk.
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Risk: Covert Reconstitution of Program</strong><span>High</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:80%; background: var(--red);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Risk: Return to Negotiations</strong><span>Low (near-term)</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:20%; background: var(--green);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Risk: NPT Withdrawal</strong><span>Medium</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:50%; background: var(--yellow);"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DOMESTIC ===== -->
+<div class="section" id="domestic">
+
+  <div class="alert alert-red">
+    <div class="alert-icon">🏛️</div>
+    <div class="alert-text"><strong>Leadership crisis:</strong> Khamenei's assassination on Feb 28 triggered a constitutional succession process. The Assembly of Experts is meeting NOW to elect a new Supreme Leader. The Interim Leadership Council (Pezeshkian, Ghalibaf, Mohseni-Eje'i, Arafi) holds power temporarily.</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2><span class="icon">👤</span> Succession Race</h2>
+      <h3>The Front-Runner: Mojtaba Khamenei</h3>
+      <p>Son of the late Supreme Leader. The IRGC is reportedly pressuring the Assembly of Experts to elect him. Would represent continuity of the Khamenei political dynasty and IRGC supremacy.</p>
+      <h3>Alternative Candidates</h3>
+      <p><strong>Gholam-Hossein Mohseni-Eje'i</strong> — Chief Justice and current Interim Council member. Conservative but more establishment than dynastic.<br><br><strong>Asghar Hijazi</strong> — Close Khamenei aide.<br><br><strong>Hassan Khomeini</strong> — Grandson of the revolution's founder; reportedly a contingency nominee by Khamenei himself.</p>
+      <div class="callout">
+        <strong>Key tension:</strong> A Mojtaba Khamenei succession would consolidate IRGC control. A reformist or compromise figure could open space for negotiation — but the IRGC's institutional power makes this unlikely under current conditions.
+      </div>
+    </div>
+    <div class="card">
+      <h2><span class="icon">🔥</span> Mass Protests (Dec 2025 – Present)</h2>
+      <p>The largest protest wave since the 1979 revolution erupted on December 28, 2025, spreading to all 31 provinces.</p>
+      <h3>Root Causes</h3>
+      <p>Food price inflation above 70%, currency collapse, electricity and gas shortages, and pervasive governance failures. For the first time, both Khamenei and Pezeshkian publicly acknowledged sanctions alone cannot explain Iran's economic dysfunction.</p>
+      <h3>Crackdown</h3>
+      <p>As of February 5, 2026: <strong>7,015+ confirmed deaths</strong> (at least 6,508 protesters), with 11,744 additional cases under review (HRANA). The regime labeled protests "foreign-funded riots."</p>
+      <h3>Pezeshkian's Position</h3>
+      <p>Elected in 2024 on good-governance promises. Acknowledged protesters' "constitutional right to peaceful protest" but lacks control over security forces. Oversaw water, electricity, and internet failures.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">💡</span> Domestic Political Dynamics</h2>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Regime Stability Risk</strong><span>Very High</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:88%; background: var(--red);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>IRGC Political Control</strong><span>Very High</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:85%; background: var(--red);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Protest Movement Cohesion</strong><span>Medium</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:50%; background: var(--yellow);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Reformist Influence</strong><span>Low</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:20%; background: var(--green);"></div></div>
+    </div>
+    <p style="margin-top:16px">The Islamic Republic faces a perfect storm: it lost its supreme leader, its nuclear deterrent, its Syrian logistics hub, its proxy network's effectiveness, and its economic credibility — all within 18 months. The key question is whether the regime can consolidate around IRGC leadership, or whether the combination of external pressure and internal revolt creates genuine regime change conditions.</p>
+  </div>
+</div>
+
+<!-- ===== PROXIES ===== -->
+<div class="section" id="proxies">
+  <div class="alert alert-yellow">
+    <div class="alert-icon">🌐</div>
+    <div class="alert-text"><strong>Proxy network severely degraded:</strong> The fall of Assad (Dec 2024) disrupted the Iran–Lebanon land corridor. Hezbollah and Hamas were materially weakened by Israeli operations. The Houthis have become more autonomous but less strategically effective without Iranian logistics.</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🗺️</span> Axis of Resistance — Current Status</h2>
+    <div class="proxy-item">
+      <div class="proxy-flag">🇵🇸</div>
+      <div class="proxy-info">
+        <div class="proxy-name">Hamas — Gaza</div>
+        <div class="proxy-status">
+          <span class="tag tag-red">Severely Degraded</span>
+          Military wing largely dismantled by Israeli operations. Leadership decimated. Oct 7 attack triggered strategic blowback Iran did not anticipate. Limited near-term operational capacity.
+        </div>
+      </div>
+      <div class="proxy-strength" style="color:var(--red)">
+        <div class="proxy-pct">↓ Low</div>
+      </div>
+    </div>
+    <div class="proxy-item">
+      <div class="proxy-flag">🇱🇧</div>
+      <div class="proxy-info">
+        <div class="proxy-name">Hezbollah — Lebanon</div>
+        <div class="proxy-status">
+          <span class="tag tag-yellow">Weakened</span>
+          Leadership hit in Israeli strikes. Syria corridor lost after Assad's fall. Still has missile/rocket stockpiles but significantly reduced logistical and financial support from Iran. Focusing on Lebanese political survival. Largely quiet as of Mar 2026.
+        </div>
+      </div>
+      <div class="proxy-strength" style="color:var(--yellow)">
+        <div class="proxy-pct">↓ Medium</div>
+      </div>
+    </div>
+    <div class="proxy-item">
+      <div class="proxy-flag">🇾🇪</div>
+      <div class="proxy-info">
+        <div class="proxy-name">Houthis (Ansar Allah) — Yemen</div>
+        <div class="proxy-status">
+          <span class="tag tag-yellow">Semi-Autonomous</span>
+          Most advanced in terms of local self-sufficiency. Now assembling and manufacturing drones and missiles domestically — less dependent on Iranian supply chains. Launched 28+ ballistic missiles at Israel in early 2025. Currently quiet amid the leadership crisis but retain long-range strike capability.
+        </div>
+      </div>
+      <div class="proxy-strength" style="color:var(--yellow)">
+        <div class="proxy-pct">→ Medium</div>
+      </div>
+    </div>
+    <div class="proxy-item">
+      <div class="proxy-flag">🇮🇶</div>
+      <div class="proxy-info">
+        <div class="proxy-name">Shia Militias — Iraq (PMF/Kataib Hezbollah)</div>
+        <div class="proxy-status">
+          <span class="tag tag-red">Constrained</span>
+          Severely constrained by domestic Iraqi politics and US military presence. Cannot match US/Israeli arsenals. Gap between rhetoric and operational capacity is wide. Mostly quiet as of Mar 2026.
+        </div>
+      </div>
+      <div class="proxy-strength" style="color:var(--red)">
+        <div class="proxy-pct">↓ Low</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🔍</span> Strategic Assessment</h2>
+    <p>Iran's "Axis of Resistance" was built on the concept of strategic depth — the idea that forward-deployed proxies could deter Israeli or US aggression by threatening multi-front retaliation. This deterrence framework has been fundamentally undermined.</p>
+    <div class="callout">
+      <strong>The control paradox:</strong> Iran's proxies offered plausible deniability and geopolitical reach, but they also acted on their own logic. Hamas's Oct 7 attack — which Iran likely did not direct — triggered an Israeli campaign that has dismantled much of what Iran spent decades building. The proxies are now "out for themselves," according to Foreign Policy analysis (Mar 2, 2026).
+    </div>
+    <p>Without sustained Iranian financial and logistical backing — now severely compromised — these actors face rapid weakening, internal fragmentation, or reorientation toward purely local agendas. The collapse of the Axis benefits Israel, Saudi Arabia, and the US.</p>
+    <p>The power vacuum left by weakened proxies is being filled by local actors and competing regional powers, creating new instability dynamics that may be harder to predict or manage than the previous Iranian-controlled framework.</p>
+  </div>
+</div>
+
+<!-- ===== IRGC DEEP DIVE ===== -->
+<div class="section" id="irgc">
+
+  <div class="alert alert-red">
+    <div class="alert-icon">⚔️</div>
+    <div class="alert-text"><strong>State within a state:</strong> The IRGC is simultaneously Iran's most powerful military force, its largest economic conglomerate, its dominant political institution, and the primary enforcer of regime survival. Understanding the IRGC is understanding who actually runs Iran — today more than ever, with Khamenei gone and the IRGC now the central power broker in the succession race.</div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card red">
+      <div class="stat-label">Active Personnel</div>
+      <div class="stat-value">190K+</div>
+      <div class="stat-sub">~600K including reserves and Basij</div>
+    </div>
+    <div class="stat-card yellow">
+      <div class="stat-label">Share of Defense Budget</div>
+      <div class="stat-value">37%</div>
+      <div class="stat-sub">Up from 27% in 2013 — ~$3.8B of $10.3B (2023)</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-label">Economy Control Est.</div>
+      <div class="stat-value">10–50%</div>
+      <div class="stat-sub">Range of analyst estimates; 800+ front companies</div>
+    </div>
+    <div class="stat-card yellow">
+      <div class="stat-label">Business Revenue (est.)</div>
+      <div class="stat-value">$12B+</div>
+      <div class="stat-sub">Annual from 100+ companies (LA Times est.)</div>
+    </div>
+    <div class="stat-card blue">
+      <div class="stat-label">Ballistic Missiles</div>
+      <div class="stat-value">~3,000+</div>
+      <div class="stat-sub">Short- to medium-range mobile launchers (pre-strike)</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-label">Quds Force Size</div>
+      <div class="stat-value">2–5K</div>
+      <div class="stat-sub">Elite external ops; manages all proxy relationships</div>
+    </div>
+  </div>
+
+  <!-- ORGANIZATIONAL STRUCTURE -->
+  <div class="card">
+    <h2><span class="icon">🏗️</span> Organizational Structure</h2>
+    <p style="margin-bottom:18px">The IRGC is not simply a military — it is a parallel state with five functional branches, each controlling a distinct domain of Iranian power:</p>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:14px">
+
+      <div style="background:var(--bg);border:1px solid var(--border);border-top:3px solid var(--red);border-radius:8px;padding:16px">
+        <div style="font-size:18px;margin-bottom:6px">🪖</div>
+        <div style="font-weight:700;font-size:13px;color:#fff;margin-bottom:6px">Ground Forces</div>
+        <div style="font-size:12px;color:var(--muted)">~100,000 troops organized in a corps structure mirroring the regular army. Controls border regions and operates independently of the Artesh (conventional military). Used domestically during protests and externally in Syria and Iraq.</div>
+      </div>
+
+      <div style="background:var(--bg);border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:8px;padding:16px">
+        <div style="font-size:18px;margin-bottom:6px">🚀</div>
+        <div style="font-weight:700;font-size:13px;color:#fff;margin-bottom:6px">Aerospace Force</div>
+        <div style="font-size:12px;color:var(--muted)">15,000 personnel. Controls Iran's entire ballistic missile arsenal — the strategic deterrence core. Operates ~3,000+ short- and medium-range mobile ballistic missiles. Also controls space launch and drone programs. Was the instrument of October 2023 and April 2024 strikes on Israel.</div>
+        <div style="margin-top:8px"><span class="tag tag-red">Severely degraded by June 2025 & Feb 2026 strikes</span></div>
+      </div>
+
+      <div style="background:var(--bg);border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:8px;padding:16px">
+        <div style="font-size:18px;margin-bottom:6px">⚓</div>
+        <div style="font-weight:700;font-size:13px;color:#fff;margin-bottom:6px">Naval Forces</div>
+        <div style="font-size:12px;color:var(--muted)">Controls the Persian Gulf and Strait of Hormuz operations — separate from the regular Iranian Navy. Operates fast-attack craft, midget submarines, and maritime drone swarms. The primary mechanism for any Hormuz closure threat. Also conducts seizures of commercial vessels as leverage.</div>
+      </div>
+
+      <div style="background:var(--bg);border:1px solid var(--border);border-top:3px solid var(--purple);border-radius:8px;padding:16px">
+        <div style="font-size:18px;margin-bottom:6px">🌐</div>
+        <div style="font-weight:700;font-size:13px;color:#fff;margin-bottom:6px">Quds Force</div>
+        <div style="font-size:12px;color:var(--muted)">Elite external operations unit, 2,000–5,000 personnel. The IRGC's "foreign policy arm." Trains, funds, arms, and directs all proxy forces — Hezbollah, Hamas, Houthis, Iraqi militias. Also runs intelligence networks, assassination operations, and arms smuggling routes. Think of it as the CIA, Special Forces, and a foreign aid agency combined.</div>
+        <div style="margin-top:8px"><span class="tag tag-yellow">Qaani detained — spy suspicion. New commander unclear.</span></div>
+      </div>
+
+      <div style="background:var(--bg);border:1px solid var(--border);border-top:3px solid var(--yellow);border-radius:8px;padding:16px">
+        <div style="font-size:18px;margin-bottom:6px">🪬</div>
+        <div style="font-weight:700;font-size:13px;color:#fff;margin-bottom:6px">Basij Militia</div>
+        <div style="font-size:12px;color:var(--muted)">~90,000 active, millions of registered volunteers. The regime's domestic enforcement arm — used for protest suppression, moral policing, and mobilizing ideological loyalists. Responsible for the majority of lethal crackdowns during the 2022 "Woman, Life, Freedom" protests and the 2025–26 uprising. Also functions as a social control network in neighborhoods, workplaces, and universities.</div>
+        <div style="margin-top:8px"><span class="tag tag-red">Primary instrument of 7,000+ protest deaths since Dec 2025</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- KEY FIGURES -->
+  <div class="card">
+    <h2><span class="icon">👤</span> Key Figures — Post-Strike Leadership</h2>
+    <p style="margin-bottom:16px">The June 2025 and February 2026 strikes have fundamentally reshuffled IRGC leadership. Here is the current picture:</p>
+
+    <div class="proxy-item">
+      <div class="proxy-flag">🎖️</div>
+      <div class="proxy-info">
+        <div class="proxy-name">Maj. Gen. Ahmad Vahidi — IRGC Commander-in-Chief (current)</div>
+        <div class="proxy-status">Appointed after Mohammad Pakpour was killed in the Feb 2026 strikes. Vahidi is a veteran hardliner and former Defense Minister. Considered a consolidationist — focused on internal IRGC discipline and regime preservation over adventurism. His appointment signals the IRGC is in survival-and-regroup mode.</div>
+      </div>
+      <div class="proxy-strength"><span class="tag tag-red">Active</span></div>
+    </div>
+
+    <div class="proxy-item">
+      <div class="proxy-flag">🎖️</div>
+      <div class="proxy-info">
+        <div class="proxy-name">Mohammad Pakpour — Former IRGC Commander-in-Chief</div>
+        <div class="proxy-status">Killed in the Feb 28, 2026 US-Israel strikes. Had commanded IRGC Ground Forces for 16 years before Khamenei elevated him to commander-in-chief after Hossein Salami was killed in June 2025. Two commanders killed within 8 months — an unprecedented leadership decapitation.</div>
+      </div>
+      <div class="proxy-strength"><span class="tag tag-yellow">KIA Feb 2026</span></div>
+    </div>
+
+    <div class="proxy-item">
+      <div class="proxy-flag">🎖️</div>
+      <div class="proxy-info">
+        <div class="proxy-name">Hossein Salami — Former IRGC Commander-in-Chief</div>
+        <div class="proxy-status">Killed by Israeli strike during the June 2025 12-Day War. Was known for maximalist rhetoric and overseeing Iran's drone and missile escalation strategy. His death was a significant blow to IRGC institutional continuity.</div>
+      </div>
+      <div class="proxy-strength"><span class="tag tag-yellow">KIA Jun 2025</span></div>
+    </div>
+
+    <div class="proxy-item">
+      <div class="proxy-flag">🕵️</div>
+      <div class="proxy-info">
+        <div class="proxy-name">Ismail Qaani — Former Quds Force Commander</div>
+        <div class="proxy-status">Succeeded Soleimani after his January 2020 assassination. Status is now deeply uncertain: initially reported killed in June 2025, he resurfaced publicly. As of March 4, 2026, he has been detained by Iranian intelligence on suspicion of being a Mossad asset — an extraordinary development that, if true, would mean Israel had penetrated the very top of the IRGC's external operations for years. The Quds Force is now leaderless and deeply compromised.</div>
+      </div>
+      <div class="proxy-strength"><span class="tag tag-red">Detained — spy suspicion</span></div>
+    </div>
+
+    <div class="proxy-item">
+      <div class="proxy-flag">🎖️</div>
+      <div class="proxy-info">
+        <div class="proxy-name">Majid Mousavi — IRGC Aerospace Force Chief</div>
+        <div class="proxy-status">Killed in Feb 2026 strikes. Commanded Iran's ballistic missile program and oversaw the April 2024 and October 2024 direct strikes on Israel. His death removes the operational architect of Iran's missile deterrence.</div>
+      </div>
+      <div class="proxy-strength"><span class="tag tag-yellow">KIA Feb 2026</span></div>
+    </div>
+
+    <div class="callout" style="margin-top:16px">
+      <strong>The decapitation pattern:</strong> The US-Israel campaign has systematically eliminated IRGC leadership across three tiers — commander-in-chief (twice), Quds Force head (compromised), and Aerospace Force chief. This is not random targeting; it reflects a deliberate strategy to destroy institutional memory, command coherence, and the personal networks that hold the IRGC together.
+    </div>
+  </div>
+
+  <!-- ECONOMIC EMPIRE -->
+  <div class="card">
+    <h2><span class="icon">💰</span> The IRGC's Economic Empire</h2>
+    <p>The IRGC is often called "a business empire with an army attached." It controls an estimated 10–50% of Iran's entire economy through a deliberately opaque web of foundations, holding companies, and front corporations — many registered under civilian names to mask military ownership.</p>
+
+    <div class="grid-2" style="margin-top:16px">
+      <div>
+        <h3>🏗️ Khatam al-Anbiya Construction HQ</h3>
+        <p>The IRGC's primary economic arm — one of Iran's largest contractors. Described by the US Treasury as controlling "hundreds of companies" across construction, mining, oil, and telecom via 800+ front companies and subcontractors. Key projects include:</p>
+        <div class="sc-impact-item" style="border-top:none;padding-top:0"><span class="dot">→</span><span>South Pars gas field development (phases 13, 14, 22–24) — the world's largest natural gas field</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Tehran's Imam Khomeini International Airport operations</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Tehran Metro Line 7</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Major dam, refinery, and pipeline contracts across Iran</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Designated by US OFAC in 2006; broadly sanctioned by EU and UK</span></div>
+      </div>
+      <div>
+        <h3>📡 Telecom &amp; Finance</h3>
+        <p>In 2009, the IRGC-linked Mobin Trust Consortium acquired <strong>51% of Telecommunication Company of Iran</strong> — the country's largest telecom provider — for $7.8 billion. This gives the IRGC direct access to Iran's entire phone and internet infrastructure, enabling surveillance and control of communications.</p>
+
+        <h3>🛢️ Oil &amp; Energy</h3>
+        <p>Beyond South Pars, IRGC entities control significant portions of Iran's petroleum distribution network, smuggling operations for sanctioned oil, and the shadow fleet logistics chain. The IRGC effectively taxes oil exports by inserting itself into the distribution chain.</p>
+
+        <h3>🏦 Cooperative Foundation (Bonyad-e Ta'avon-e Sepah)</h3>
+        <p>The IRGC's financial holding entity. Controls real estate, banking interests, and manufacturing across consumer goods, pharmaceuticals, and food. Provides financial services to IRGC personnel and their families — creating a self-contained parallel economy.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:16px">
+      <strong>Why this matters geopolitically:</strong> The IRGC's economic empire means sanctions hurt ordinary Iranians disproportionately — IRGC entities have sophisticated workarounds, offshore accounts, and front companies. Conversely, any post-regime transition would require dismantling this empire, which would be fiercely resisted. The economic empire is the IRGC's institutional survival mechanism.
+    </div>
+  </div>
+
+  <!-- POLITICAL POWER -->
+  <div class="card">
+    <h2><span class="icon">🗳️</span> Political Power &amp; the Succession Play</h2>
+
+    <div class="grid-2">
+      <div>
+        <h3>How the IRGC Controls Politics</h3>
+        <p>The IRGC's political dominance operates through five overlapping mechanisms:</p>
+        <div class="sc-impact-item" style="border-top:none;padding-top:0"><span class="dot">1.</span><span><strong>Guardian Council vetting:</strong> IRGC-aligned clerics on the Guardian Council block reformist candidates from running, ensuring only ideologically acceptable figures hold elected office</span></div>
+        <div class="sc-impact-item"><span class="dot">2.</span><span><strong>Intelligence penetration:</strong> IRGC intelligence (separate from the Ministry of Intelligence) monitors government ministries, judiciary, and parliament for disloyalty</span></div>
+        <div class="sc-impact-item"><span class="dot">3.</span><span><strong>Economic leverage:</strong> Ministries and officials that challenge IRGC contracts or economic interests face obstruction, investigation, or worse</span></div>
+        <div class="sc-impact-item"><span class="dot">4.</span><span><strong>Media control:</strong> IRGC controls key state media and press outlets, shaping domestic narratives</span></div>
+        <div class="sc-impact-item"><span class="dot">5.</span><span><strong>Physical intimidation:</strong> The Basij and IRGC intelligence units have a documented history of arresting, torturing, and disappearing political opponents</span></div>
+      </div>
+      <div>
+        <h3>The Succession Power Grab (Mar 2026)</h3>
+        <p>Following Khamenei's assassination, the IRGC moved immediately. According to Iran International, IRGC commanders began "repeated contacts and psychological and political pressure" on Assembly of Experts members from March 3, 2026 onward — demanding they vote for <strong>Mojtaba Khamenei</strong>, the late Supreme Leader's son.</p>
+        <p style="margin-top:10px">This is constitutionally irregular — the Assembly of Experts is nominally an independent clerical body — but reflects the IRGC's calculation that a Khamenei dynasty figure provides the most legitimacy while keeping real power with the Guard.</p>
+        <p style="margin-top:10px">NBC News and Al Jazeera both reported that "regardless of who's chosen, real power is now likely in the hands of the IRGC" — an assessment shared across Western intelligence services.</p>
+        <div class="callout" style="margin-top:12px">
+          <strong>Historical parallel:</strong> This mirrors Pakistan's dynamic where the ISI and military hold de facto power regardless of who holds formal office — a model that produces persistent instability, not consolidation.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MILITARY CAPACITY POST-STRIKES -->
+  <div class="card">
+    <h2><span class="icon">💥</span> Military Capacity — Post-Strike Assessment</h2>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Ballistic Missile Program</strong><span>Severely degraded</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:25%; background: var(--red);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Drone Production Capacity</strong><span>Partially intact</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:45%; background: var(--yellow);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Naval / Hormuz Threat Capability</strong><span>Largely intact</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:70%; background: var(--yellow);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Quds Force / External Ops</strong><span>Leadership compromised</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:20%; background: var(--red);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Basij Domestic Control</strong><span>Still operational</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:65%; background: var(--yellow);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Command &amp; Control Coherence</strong><span>Severely disrupted</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:20%; background: var(--red);"></div></div>
+    </div>
+
+    <p style="margin-top:16px">The strikes have been most effective against <strong>high-value, fixed or centralized assets</strong> — missile sites, command infrastructure, and named leadership. They have been least effective against <strong>distributed, informal, and low-tech capabilities</strong> — Basij networks, drone workshops, and the economic empire. This asymmetry means the IRGC retains significant domestic coercive power even as its external projection capability has been gutted.</p>
+
+    <div class="callout">
+      <strong>The Hormuz wildcard:</strong> The IRGC Navy's fast-attack craft, mine-laying capability, and coastal missile batteries — which threaten the Strait of Hormuz — were not primary targets in either the June 2025 or Feb 2026 strikes. This capability remains the IRGC's most powerful remaining leverage over the global economy, and the threat of its use is what keeps oil markets pricing in a risk premium.
+    </div>
+  </div>
+
+  <!-- UAE ASSET FREEZE -->
+  <div class="card">
+    <h2><span class="icon">🇦🇪</span> BREAKING: UAE Iranian Asset Freeze Threat — A Financial Nuke</h2>
+    <div class="alert alert-red" style="margin-bottom:16px">
+      <div class="alert-icon">🚨</div>
+      <div class="alert-text"><strong>New development (Mar 5, 2026):</strong> Iran launched 189 ballistic missiles, 941 drone attacks, and 3 cruise missiles against UAE targets between Feb 28 and Mar 4, killing 3 and injuring 78. In response, UAE President Sheikh Mohammed bin Zayed (MBZ) is reportedly considering freezing all Iranian-linked assets held in the UAE — a move analysts are calling a potential "$100 billion financial nuke" on Iran.</div>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <h3>Why the UAE Is a Critical Node for Iranian Finance</h3>
+        <p>Despite formal sanctions, the UAE — particularly Dubai — has long served as the primary offshore financial hub for IRGC-linked money. US Treasury and FinCEN investigations have identified a massive web of UAE-based shell companies and front entities moving billions in illicit transactions for sanctioned Iranian actors. These structures include:</p>
+        <div class="sc-impact-item" style="border-top:none;padding-top:0"><span class="dot">→</span><span>Real estate holdings in Dubai registered under civilian names masking IRGC ownership</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Trading companies facilitating sanctioned oil sales and petrochemical exports</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Bank accounts at UAE financial institutions used to pay proxy networks and arms dealers</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Gold and crypto conversion operations run through Dubai free zones</span></div>
+      </div>
+      <div>
+        <h3>What MBZ Can Actually Do</h3>
+        <p>Abu Dhabi's intelligence agencies are reported to have comprehensive visibility into which entities are IRGC-linked. A freeze order could involve:</p>
+        <div class="sc-impact-item" style="border-top:none;padding-top:0"><span class="dot">→</span><span>Overnight asset freeze of shell companies and properties identified as IRGC-connected</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Expulsion of Iranian nationals with IRGC ties from UAE free zones</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Coordination with US Treasury OFAC to designate UAE-based Iranian front entities</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Suspension of UAE-Iran trade channels (~$15–20B annually pre-conflict)</span></div>
+        <h3>UAE Stock Market Impact</h3>
+        <p>UAE equity markets were suspended for two days following the Iranian strikes. On reopening (Mar 4), markets slid sharply. Hedge funds and banks in Dubai and Abu Dhabi are in active contingency mode, per Bloomberg reporting.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Strategic significance:</strong> If MBZ follows through, this would close the UAE financial corridor — one of the last remaining informal lifelines for IRGC-linked cash flows. Combined with the Venezuela oil workaround being shut down and maximum pressure sanctions, it would represent near-total financial isolation of the IRGC's external revenue network. Iran struck the one Gulf state that held its money. That may prove to be a catastrophic miscalculation.
+    </div>
+
+    <div class="risk-bar-wrapper" style="margin-top:16px">
+      <div class="risk-bar-label"><strong>Likelihood UAE executes broad asset freeze (30-day horizon)</strong><span>Medium-High</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:65%; background: var(--yellow);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Impact on IRGC financial flows if freeze executed</strong><span>Severe</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:85%; background: var(--red);"></div></div>
+    </div>
+  </div>
+
+  <!-- SOURCES NOTE -->
+  <div class="sources" style="margin-top:0">
+    <h4>📚 IRGC Deep Dive Sources</h4>
+    <a href="https://en.wikipedia.org/wiki/Islamic_Revolutionary_Guard_Corps" target="_blank">Wikipedia: IRGC</a>
+    <a href="https://www.cfr.org/backgrounders/irans-revolutionary-guards" target="_blank">CFR: Iran's Revolutionary Guards</a>
+    <a href="https://fortune.com/2026/03/02/iran-islamic-revolutionary-guard-irgc-business-empire-economy-us-israel-bombing/" target="_blank">Fortune: IRGC Business Empire</a>
+    <a href="https://www.nbcnews.com/world/iran/khamenei-dead-powerful-hard-line-military-corps-rcna261296" target="_blank">NBC News: IRGC Post-Khamenei</a>
+    <a href="https://www.iranintl.com/en/202603048311" target="_blank">Iran International: IRGC Succession Pressure</a>
+    <a href="https://gulfif.org/the-economic-empire-of-the-revolutionary-guards-in-iran/" target="_blank">Gulf International Forum: IRGC Economic Empire</a>
+    <a href="https://en.wikipedia.org/wiki/Quds_Force" target="_blank">Wikipedia: Quds Force</a>
+    <a href="https://en.wikipedia.org/wiki/Economic_activities_of_the_Iranian_Revolutionary_Guard_Corps" target="_blank">Wikipedia: IRGC Economic Activities</a>
+    <a href="https://en.wikipedia.org/wiki/Khatam-al_Anbiya_Construction_Headquarters" target="_blank">Wikipedia: Khatam al-Anbiya</a>
+    <a href="https://www.aljazeera.com/features/2026/3/1/has-trump-misunderstood-irans-irgc-and-the-basij-forces" target="_blank">Al Jazeera: IRGC vs. Basij Explainer</a>
+    <a href="https://www.timesofisrael.com/liveblog_entry/israeli-officials-believe-irgc-chief-killed-in-strike/" target="_blank">Times of Israel: IRGC Chief Killed</a>
+    <a href="https://www.thenationalnews.com/news/mena/2026/03/04/the-commander-who-keeps-surviving-mystery-deepens-around-irans-qaani-and-the-spy-question/" target="_blank">The National: Qaani Spy Mystery</a>
+    <a href="https://www.jpost.com/middle-east/iran-news/article-857692" target="_blank">Jerusalem Post: IRGC Leadership Replacement</a>
+    <a href="https://www.mei.edu/publications/irgcs-role-irans-economy-growing-its-engineering-arm-set-execute-40-mega-projects" target="_blank">MEI: IRGC Economic Role Growing</a>
+    <a href="https://www.wionews.com/photos/-financial-assassins-how-uae-s-mbz-can-bankrupt-irgc-to-avenge-attack-on-dubai-and-abu-dhabi-1772363341925" target="_blank">WION: UAE Financial Assassination of IRGC</a>
+    <a href="https://en.wikipedia.org/wiki/2026_Iranian_strikes_on_the_United_Arab_Emirates" target="_blank">Wikipedia: 2026 Iranian Strikes on UAE</a>
+    <a href="https://www.bloomberg.com/news/articles/2026-03-01/iran-strikes-uae-hedge-funds-banks-in-contingency-mode-in-dubai-abu-dhabi" target="_blank">Bloomberg: Hedge Funds in Contingency Mode Dubai</a>
+    <a href="https://energynews.oedigital.com/oil-gas/2026/03/04/uae-stock-markets-slide-after-reopening-following-a-twoday-suspension-due-to-the-iran-attacks" target="_blank">OE Digital: UAE Stock Markets Slide</a>
+    <a href="https://www.aljazeera.com/news/2026/2/28/multiple-gulf-arab-states-that-host-us-assets-targeted-in-iran-retaliation" target="_blank">Al Jazeera: Gulf States Targeted in Iran Retaliation</a>
+  </div>
+</div>
+
+<!-- ===== US POLICY ===== -->
+<div class="section" id="usgov">
+
+  <div class="card">
+    <h2><span class="icon">🦅</span> Trump's "Maximum Pressure Plus" Strategy</h2>
+    <p>The Trump administration has pursued an aggressive, multi-instrument strategy against Iran combining sanctions, tariffs, energy policy, and direct military force — a significant escalation from the "maximum pressure" campaign of the first term.</p>
+
+    <div class="grid-2" style="margin-top:16px">
+      <div>
+        <h3>💸 Sanctions Architecture</h3>
+        <p>Early 2025: Maximum pressure sanctions reimposed targeting Iran's shadow fleet responsible for oil exports. Key new elements: Chinese "teapot" refinery sanctions, OFAC actions against financial facilitators, and coordination with EU partners on snapback mechanisms.</p>
+      </div>
+      <div>
+        <h3>🛢️ Oil Policy as Weapon</h3>
+        <p>The Trump administration coordinated with OPEC+ to maintain a well-supplied oil market (currently ~$55/barrel, down 18% from 2025), deliberately creating an environment where energy-dependent adversaries like Iran, Russia, and Venezuela face maximum fiscal pain.</p>
+      </div>
+    </div>
+
+    <h3>🌎 Venezuela — The Oil Connection</h3>
+    <p>On January 3, 2026, US forces arrested Venezuelan President Nicolás Maduro. Trump declared the US would "take back" Venezuelan oil, with revenue earmarked for the Venezuelan people, US oil companies, and "reimbursement to the United States." This served three strategic goals:</p>
+    <div style="margin:10px 0 10px 16px">
+      <div class="sc-impact-item"><span class="dot">→</span><span>Disrupted the Iran–Venezuela–China oil triangle, a key Iranian sanctions workaround</span></div>
+      <div class="sc-impact-item"><span class="dot">→</span><span>Eliminated a drug trafficking corridor partially used by Iranian-affiliated networks</span></div>
+      <div class="sc-impact-item"><span class="dot">→</span><span>Sent a signal about willingness to use direct force to reshape oil markets</span></div>
+    </div>
+    <p>The FDD (Foundation for Defense of Democracies) explicitly called for applying the Venezuela blockade model to Iran's oil shipments in December 2025 — a blueprint the administration appeared to follow months later.</p>
+
+    <h3>🎯 Tariff Leverage</h3>
+    <p>Trump's broad tariff architecture serves dual purposes: generating domestic revenue while creating leverage in negotiations with China (which imports Iranian oil despite sanctions). The threat of expanded tariffs on Chinese goods has complicated Beijing's calculus on how openly to support Iranian oil exports and military needs.</p>
+
+    <div class="callout">
+      <strong>The Grand Strategy:</strong> Trump's approach treats Iran, Russia, Venezuela, and China as an interconnected adversary network. By simultaneously targeting each node — sanctions on Iran, military action in Venezuela, tariff pressure on China, military support for Ukraine degrading Russia — the administration is attempting to collapse the economic and political infrastructure that allows these actors to resist US pressure.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🏛️</span> Congressional &amp; Institutional Context</h2>
+    <p>Trump's State of the Union (early 2026) stated a preference for diplomatic resolution but explicit rejection of a nuclear-armed Iran. US repositioned the USS Abraham Lincoln and accompanying destroyers to the Persian Gulf region in mid-January 2026 — a signal both to Iran and to allies.</p>
+    <div class="risk-bar-wrapper" style="margin-top:16px">
+      <div class="risk-bar-label"><strong>Likelihood of Further Military Action (6-month horizon)</strong><span>Medium-High</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:65%; background: var(--yellow);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Likelihood of New Diplomatic Engagement</strong><span>Low</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:25%; background: var(--green);"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SUPERPOWERS ===== -->
+<div class="section" id="superpowers">
+
+  <div class="alert alert-blue">
+    <div class="alert-icon">⚡</div>
+    <div class="alert-text"><strong>Pattern:</strong> Russia and China both condemned the Feb 28 strikes in an emergency UN Security Council session. However, neither has pledged military or material support to Tehran. Practical limitations and competing priorities are constraining meaningful intervention.</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2><span class="icon">🇷🇺</span> Russia</h2>
+      <h3>Rhetoric vs. Capacity</h3>
+      <p>Foreign Minister Lavrov condemned the strikes as "unprovoked military aggression" and offered to help find a diplomatic solution. However, years of grinding war in Ukraine have hollowed out Russia's capacity to project power into the Middle East.</p>
+      <h3>Military Constraints</h3>
+      <p>Russia's military is overstretched. Its Middle East influence, built during the Syria intervention (2015–2024), has collapsed along with the Assad regime. Moscow cannot provide Iran with meaningful military aid without jeopardizing its own operations.</p>
+      <h3>Economic Constraints</h3>
+      <p>Russia's economy is under sustained pressure from Western sanctions. Oil revenue — its primary geopolitical tool — is constrained by the same low-price environment that punishes Iran.</p>
+      <h3>Iran's Tech Dependence</h3>
+      <p>Iran had turned to Russia and China for missile technology and military components after the 2025 12-Day War. With Russia overstretched and under scrutiny, that supply chain is now disrupted.</p>
+    </div>
+    <div class="card">
+      <h2><span class="icon">🇨🇳</span> China</h2>
+      <h3>The Critical Balancing Act</h3>
+      <p>China is Iran's largest trading partner and a key buyer of sanctioned Iranian oil via teapot refineries. It has strong economic incentives to maintain ties with Tehran but equally strong incentives not to directly confront the US.</p>
+      <h3>Condemnation Without Commitment</h3>
+      <p>Beijing condemned the strikes at the UN Security Council but explicitly did not pledge material support. China's restrained stance is consistent with its historical approach: buy Iranian oil quietly, condemn US aggression publicly, avoid direct conflict.</p>
+      <h3>BRI &amp; INSTC Disruption</h3>
+      <p>The strikes on Bandar Abbas port (Iran's main trade hub) threaten the International North-South Transport Corridor and Belt and Road Initiative projects — infrastructure that China and Russia rely on to bypass Western-controlled maritime routes. This economic damage may motivate diplomatic efforts even as military support remains off the table.</p>
+      <h3>Tariff Leverage</h3>
+      <p>Trump's tariff pressure complicates China's ability to openly defy US sanctions on Iran. The risk of secondary sanctions on Chinese entities remains a powerful deterrent against escalating material support.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🌍</span> Global Economic Implications</h2>
+    <div class="grid-2">
+      <div>
+        <h3>🛢️ Oil &amp; Energy Markets</h3>
+        <p>Current global oversupply (~$55/barrel) has muted the traditional oil price shock from Middle East conflict. However, sustained Iranian retaliation or proxy escalation threatening Gulf shipping lanes could trigger rapid price spikes. The Strait of Hormuz — through which ~20% of global oil transits — remains a choke point.</p>
+        <h3>🚢 Shipping &amp; Trade Routes</h3>
+        <p>Houthi attacks on Red Sea shipping (2024–2025) already added billions in rerouting costs. Strikes on Bandar Abbas further compress Iran's trade capacity and disrupt the INSTC corridor from India to Europe via Iran.</p>
+      </div>
+      <div>
+        <h3>📊 Global Financial Implications</h3>
+        <p>Sustained instability in the Persian Gulf raises insurance premiums, delays cargo, and creates inflationary pressure in Europe and Asia. The ECB and Fed must balance conflict-driven energy uncertainty against existing tightening cycles.</p>
+        <h3>🌐 Geopolitical Realignment</h3>
+        <p>The US-Israel willingness to execute leadership decapitation operations marks a significant escalation of the permissible in international relations — raising risk premiums for other adversarial regimes and potentially accelerating nuclear hedging behavior in third countries (Saudi Arabia, Turkey, UAE).</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ECONOMY ===== -->
+<div class="section" id="economy">
+
+  <div class="alert alert-red">
+    <div class="alert-icon">📉</div>
+    <div class="alert-text"><strong>Economic meltdown:</strong> Iran is experiencing its deepest and longest economic crisis in modern history. The Feb 2026 strikes added a supply crisis on top of a pre-existing inflation and currency crisis. Point inflation hit 68.1% in February 2026.</div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card red">
+      <div class="stat-label">Inflation (Feb 2026)</div>
+      <div class="stat-value">68.1%</div>
+      <div class="stat-sub">Multi-decade high; food inflation was 70%+ in 2025</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-label">Currency Collapse</div>
+      <div class="stat-value">1.75M</div>
+      <div class="stat-sub">Rials/USD vs. 42,000 in 2018 (97% loss)</div>
+    </div>
+    <div class="stat-card yellow">
+      <div class="stat-label">Poverty Rate</div>
+      <div class="stat-value">22–50%</div>
+      <div class="stat-sub">Estimated range — up sharply from 2022</div>
+    </div>
+    <div class="stat-card blue">
+      <div class="stat-label">Global Oil Price</div>
+      <div class="stat-value">~$55</div>
+      <div class="stat-sub">EIA 2026 forecast — down 18% YoY</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2><span class="icon">💸</span> Root Causes of Collapse</h2>
+      <h3>Sanctions &amp; Oil Revenue Loss</h3>
+      <p>Maximum pressure sanctions slashed Iran's oil export revenue — its primary budget source. The shadow fleet workaround, while partially effective, could not compensate for the scale of restriction.</p>
+      <h3>Governance Failures</h3>
+      <p>For the first time, both Khamenei and Pezeshkian publicly acknowledged that governance failures — not just sanctions — were responsible for economic dysfunction. Mismanagement of energy infrastructure led to electricity and gas shortages even in an energy-rich country.</p>
+      <h3>Currency Spiral</h3>
+      <p>The rial has lost approximately 97% of its value since 2018. Each round of sanctions, conflict escalation, or political uncertainty triggers further capital flight and rial depreciation — feeding into import-cost inflation across all sectors.</p>
+      <h3>Strike Amplification</h3>
+      <p>The Feb 2026 strikes added infrastructure destruction to an already fragile economy — power outages, fuel shortages, port disruptions at Bandar Abbas, and a collapse in investor/business confidence.</p>
+    </div>
+    <div class="card">
+      <h2><span class="icon">🔮</span> Economic Outlook</h2>
+      <h3>Near-Term (0–6 months)</h3>
+      <p>Continued currency depreciation, high inflation, and supply disruptions. Succession uncertainty and security instability will prevent any economic stabilization. Foreign investment essentially zero.</p>
+      <h3>Medium-Term (6–24 months)</h3>
+      <p>Outcome depends heavily on the political scenario. A new Supreme Leader willing to negotiate sanctions relief could begin a stabilization path — but any credible deal would require NPT compliance, IAEA access, and enrichment restrictions that the IRGC is unlikely to accept.</p>
+      <h3>Structural Issues</h3>
+      <p>Even in a best-case diplomatic scenario, reversing years of economic damage will take a decade. The rial's credibility is destroyed, institutional capacity is degraded, and a generation of educated Iranians has emigrated (brain drain).</p>
+      <div class="callout">
+        <strong>Key watch item:</strong> If China significantly expands oil purchases despite secondary sanction risk, it could provide Iran a meaningful economic lifeline — but China's appetite for direct confrontation with the US remains low.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCENARIOS ===== -->
+<div class="section" id="scenarios">
+
+  <div class="card">
+    <h2><span class="icon">🔮</span> Four Scenarios for Iran's Near-Term Future</h2>
+    <p style="margin-bottom:20px">Based on current intelligence and geopolitical dynamics as of March 5, 2026. Probability estimates are analytical judgments, not certainties.</p>
+
+    <div class="scenario-grid">
+      <div class="scenario-card s1">
+        <div class="sc-label">Scenario 1 — Dark</div>
+        <div class="sc-title">IRGC Consolidation &amp; Prolonged Conflict</div>
+        <div class="sc-prob">~35% probability</div>
+        <div class="sc-body">
+          The IRGC installs Mojtaba Khamenei as Supreme Leader, entrenching hardline control. Iran's new leadership refuses all negotiations, accelerates covert nuclear reconstitution, and orders proxies and domestic security forces to escalate. Regime survives through brutality despite economic collapse.
+        </div>
+        <div class="sc-impacts">
+          <div class="sc-impact-item"><span class="dot">→</span><span>Ongoing proxy escalation in Iraq, Yemen; Houthis intensify Red Sea disruption</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>Further US military action likely within 12–18 months</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>Oil spike risk if Strait of Hormuz threatened; global inflation pressure</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>China quietly increases Iranian oil imports; US-China tensions rise</span></div>
+        </div>
+      </div>
+
+      <div class="scenario-card s2">
+        <div class="sc-label">Scenario 2 — Volatile</div>
+        <div class="sc-title">Regime Fragmentation &amp; Power Struggle</div>
+        <div class="sc-prob">~30% probability</div>
+        <div class="sc-body">
+          No consensus successor. IRGC, Assembly of Experts, and civilian government (Pezeshkian) compete for control. Factional infighting paralyzes decision-making. Iran neither escalates fully nor negotiates — muddling through in a state of managed dysfunction.
+        </div>
+        <div class="sc-impacts">
+          <div class="sc-impact-item"><span class="dot">→</span><span>Protest movement gains space; sporadic violence continues</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>Nuclear program in limbo — no clear authority to negotiate or accelerate</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>Proxies increasingly autonomous, unpredictable — higher risk of miscalculation</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>Economic freefall continues; refugee/migration pressure on neighbors</span></div>
+        </div>
+      </div>
+
+      <div class="scenario-card s3">
+        <div class="sc-label">Scenario 3 — Managed</div>
+        <div class="sc-title">Pragmatic Successor &amp; Negotiated Off-Ramp</div>
+        <div class="sc-prob">~20% probability</div>
+        <div class="sc-body">
+          A pragmatic Supreme Leader (possibly Hassan Khomeini or a reformist compromise) emerges and signals willingness to negotiate. Trump, seeking a "deal," engages. New framework agreed: limited enrichment, IAEA access restored, phased sanctions relief. Modeled loosely on JCPOA but with IRGC constraints.
+        </div>
+        <div class="sc-impacts">
+          <div class="sc-impact-item"><span class="dot">→</span><span>Iranian oil re-enters global market; modest downward pressure on prices</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>Protests continue but regime stabilizes economically over 2–3 years</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>China and Russia welcome reduced tensions; BRI corridor recovers</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>Israel deeply skeptical; possible unilateral Israeli action to derail talks</span></div>
+        </div>
+      </div>
+
+      <div class="scenario-card s4">
+        <div class="sc-label">Scenario 4 — Transformative</div>
+        <div class="sc-title">Regime Change / Revolutionary Transition</div>
+        <div class="sc-prob">~15% probability</div>
+        <div class="sc-body">
+          Compounding crises — leadership vacuum, economic collapse, mass protests, military degradation — trigger a regime-ending transition. A revolutionary council or transitional government forms, ending the Islamic Republic. Reza Pahlavi and opposition figures in exile play a role.
+        </div>
+        <div class="sc-impacts">
+          <div class="sc-impact-item"><span class="dot">→</span><span>Short-term chaos and civil conflict; risk of IRGC-led counter-revolution</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>Nuclear material security becomes critical concern for US/Israel/IAEA</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>Long-term: potential for Iran reintegration into global economy</span></div>
+          <div class="sc-impact-item"><span class="dot">→</span><span>Regional power vacuum: Saudi Arabia, Turkey, Israel compete to shape new Iran</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">📡</span> Key Indicators to Watch</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Political</h3>
+        <div class="sc-impact-item" style="border-top:none; padding-top:0"><span class="dot">→</span><span>Who is named Supreme Leader and their first public statements</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>IRGC public posture — consolidating control or divided?</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Pezeshkian's relationship with new Supreme Leader</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Scale and geographic spread of protest activity</span></div>
+      </div>
+      <div>
+        <h3>Nuclear &amp; Military</h3>
+        <div class="sc-impact-item" style="border-top:none; padding-top:0"><span class="dot">→</span><span>IAEA access restoration — or formal NPT non-compliance declaration</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Any Iranian nuclear or missile test activity</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Houthi activity in Red Sea and Bab-el-Mandeb Strait</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Iraqi militia activation or Iranian-linked attacks on US bases</span></div>
+      </div>
+      <div>
+        <h3>Economic</h3>
+        <div class="sc-impact-item" style="border-top:none; padding-top:0"><span class="dot">→</span><span>Chinese oil purchase volumes (shadow fleet tracking)</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Rial/USD exchange rate trajectory</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Bandar Abbas port reopening and trade volume recovery</span></div>
+      </div>
+      <div>
+        <h3>Diplomatic</h3>
+        <div class="sc-impact-item" style="border-top:none; padding-top:0"><span class="dot">→</span><span>Any back-channel communication between US and new Iranian leadership</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Russia/China bilateral meetings with new Supreme Leader</span></div>
+        <div class="sc-impact-item"><span class="dot">→</span><span>Saudi Arabia or UAE back-channel mediation attempts</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== GRAND STRATEGY ===== -->
+<div class="section" id="grandstrategy">
+
+  <div class="alert alert-yellow">
+    <div class="alert-icon">🌍</div>
+    <div class="alert-text"><strong>Theory-crafting note:</strong> This tab synthesizes publicly available analysis and think-tank commentary on patterns in US foreign policy moves since Jan 2025. These are analytical frameworks — not official policy statements. The convergence of actions across trade, military, energy, and territorial domains has prompted serious geopolitical debate about whether they reflect an opportunistic style or a deliberate grand strategy.</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🗺️</span> The "Donroe Doctrine" — Resource Supremacy Theory</h2>
+    <p>Trump's 2025 National Security Strategy explicitly revives the Monroe Doctrine, extended to what analysts at Middle East Eye and OpenDemocracy have termed the <strong>"Donroe Doctrine"</strong> — the use of economic and military force to assert US control over energy and critical mineral resources within and beyond the Western Hemisphere.</p>
+
+    <div class="callout">
+      <strong>The core theory:</strong> The US is systematically moving to control or deny adversaries access to the world's most strategically valuable resources — oil, rare earths, critical minerals, and maritime chokepoints — before a potential multi-decade rivalry with China reaches its critical phase.
+    </div>
+
+    <h3>The Resource Map — Known Targets</h3>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:12px; margin:12px 0">
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+        <div style="font-size:22px;margin-bottom:6px">🇻🇪</div>
+        <div style="font-weight:700;font-size:13px;color:#fff;margin-bottom:4px">Venezuela</div>
+        <div style="font-size:12px;color:var(--muted)">World's largest proven oil reserves (~303 Bb). Maduro arrested Jan 2026. Trump declared US would "take back" the oil.</div>
+        <div style="margin-top:8px"><span class="tag tag-red">Executed</span></div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+        <div style="font-size:22px;margin-bottom:6px">🇮🇷</div>
+        <div style="font-weight:700;font-size:13px;color:#fff;margin-bottom:4px">Iran</div>
+        <div style="font-size:12px;color:var(--muted)">4th-largest proven oil reserves. Controls Strait of Hormuz. Nuclear program neutralized. Regime under existential pressure.</div>
+        <div style="margin-top:8px"><span class="tag tag-red">In Progress</span></div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+        <div style="font-size:22px;margin-bottom:6px">🇬🇱</div>
+        <div style="font-weight:700;font-size:13px;color:#fff;margin-bottom:4px">Greenland</div>
+        <div style="font-size:12px;color:var(--muted)">Rare earth minerals (neodymium, cerium, lanthanum) critical for defense & EVs. Arctic shipping routes. Trump called acquisition "an absolute necessity."</div>
+        <div style="margin-top:8px"><span class="tag tag-yellow">Active Pressure</span></div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+        <div style="font-size:22px;margin-bottom:6px">🇵🇦</div>
+        <div style="font-weight:700;font-size:13px;color:#fff;margin-bottom:4px">Panama Canal</div>
+        <div style="font-size:12px;color:var(--muted)">Chinese-linked companies operate ports at both ends. ~5% of global trade. Trump demanded return of canal control, citing "excessive rates."</div>
+        <div style="margin-top:8px"><span class="tag tag-yellow">Diplomatic Pressure</span></div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+        <div style="font-size:22px;margin-bottom:6px">🇨🇦</div>
+        <div style="font-weight:700;font-size:13px;color:#fff;margin-bottom:4px">Canada</div>
+        <div style="font-size:12px;color:var(--muted)">Oil sands (175 Bb reserves), rare earth deposits, fresh water. Trump proposed "economic force" annexation; 25% tariffs imposed.</div>
+        <div style="margin-top:8px"><span class="tag tag-yellow">Tariff Leverage</span></div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px">
+        <div style="font-size:22px;margin-bottom:6px">🇺🇦</div>
+        <div style="font-weight:700;font-size:13px;color:#fff;margin-bottom:4px">Ukraine</div>
+        <div style="font-size:12px;color:var(--muted)">$10–14T in critical mineral deposits (titanium, uranium, rare earths, lithium). US secured a minerals deal as condition for continued military aid.</div>
+        <div style="margin-top:8px"><span class="tag tag-green">Deal Secured</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🔗</span> The Interconnected Move Sequence</h2>
+    <p style="margin-bottom:16px">Critics and analysts point to a notable <em>sequencing</em> across the Trump administration's moves that suggests coordination rather than improvisation:</p>
+
+    <div class="timeline">
+      <div class="tl-item blue">
+        <div class="tl-date">Jan 2025</div>
+        <div class="tl-title">Step 1: Tariff Shock — Establish Leverage Over All Actors Simultaneously</div>
+        <div class="tl-body">Broad tariffs imposed on China, Canada, EU, Mexico. Economists note this creates maximum negotiating leverage and forces every major player into a defensive posture — preventing coordinated opposition to subsequent moves.</div>
+      </div>
+      <div class="tl-item blue">
+        <div class="tl-date">Jan–Mar 2025</div>
+        <div class="tl-title">Step 2: Energy Independence — "Drill Baby Drill" + OPEC Coordination</div>
+        <div class="tl-body">US oil production increased and OPEC+ encouraged to maintain oversupply, driving prices to ~$55–60/barrel. This simultaneously: (a) reduces US vulnerability to oil shocks from its own actions, (b) punishes Iran, Russia, and Venezuela whose budgets require $80–100+/barrel to balance, (c) gives Trump geopolitical flexibility.</div>
+      </div>
+      <div class="tl-item yellow">
+        <div class="tl-date">Apr–Jun 2025</div>
+        <div class="tl-title">Step 3: Neutralize the Nuclear Wildcard — Iran Talks, then Strikes</div>
+        <div class="tl-body">Five rounds of nuclear talks offer Iran a genuine off-ramp. Iran's refusal — citing enrichment as an "inalienable right" — provides the political justification for military action. June 2025 strikes destroy Fordow, Natanz, Isfahan. Iran loses its primary deterrence-by-threat mechanism.</div>
+      </div>
+      <div class="tl-item yellow">
+        <div class="tl-date">Oct–Nov 2025</div>
+        <div class="tl-title">Step 4: China Trade Truce — Separate Beijing from Tehran</div>
+        <div class="tl-body">After tariff escalation to 130%, Trump and Xi meet in Busan. Trade truce achieved. China suspends rare earth export restrictions. Analysis: this isolates Iran by reducing China's incentive to actively undermine US pressure, while preserving economic leverage for later use.</div>
+      </div>
+      <div class="tl-item red">
+        <div class="tl-date">Jan 2026</div>
+        <div class="tl-title">Step 5: Venezuela — Close the Oil Sanctions Workaround</div>
+        <div class="tl-body">Maduro arrested, US takes operational control of Venezuelan oil infrastructure. Simultaneously eliminates: (a) the Iran-Venezuela-China sanctions evasion triangle, (b) a drug trafficking corridor, (c) Chinese-influenced oil flows in the Western Hemisphere. FDD had explicitly recommended applying the Venezuela blockade model to Iran — which happened weeks later.</div>
+      </div>
+      <div class="tl-item red">
+        <div class="tl-date">Feb 28, 2026</div>
+        <div class="tl-title">Step 6: Decapitate — Kill Khamenei, Create Regime Uncertainty</div>
+        <div class="tl-body">With Iran's nuclear program set back, oil revenue near zero, proxies degraded, China de-linked from active support, and Venezuela closed as a workaround — the US-Israel operation kills Khamenei. The succession crisis and internal pressure are now meant to finish what sanctions and strikes started.</div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:20px">
+      <strong>The counter-argument:</strong> Many analysts (Responsible Statecraft, CFR) argue this pattern reflects Trump's transactional opportunism rather than a coherent strategy — and that the gaps between stated goals and execution capacity are enormous. Venezuela's oil is not easily "taken back," Greenland has not been acquired, and a post-Khamenei Iran may be more chaotic and dangerous, not more compliant.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">💵</span> The Petrodollar Dimension</h2>
+    <p>A significant thread in the theory-crafting community focuses on the <strong>petrodollar system</strong> — the arrangement since 1974 by which oil is priced and settled in US dollars, generating global demand for dollar liquidity and underwriting US financial hegemony.</p>
+
+    <div class="grid-2" style="margin-top:14px">
+      <div>
+        <h3>The De-Dollarization Threat</h3>
+        <p>Russia, Iran, Venezuela, and China have been actively building infrastructure to trade oil outside dollar systems — BRICS payment platforms, yuan-denominated oil contracts (petroyuan), and INSTC corridor trade in non-dollar currencies. If these corridors scale, dollar demand falls and US debt financing costs rise.</p>
+        <h3>The US Response Theory</h3>
+        <p>OpenDemocracy and the Institute of Geoeconomics argue the Venezuela intervention and Iran campaign are less about specific oil revenues and more about <strong>reasserting that dollar pricing of oil is non-negotiable</strong> — by disrupting non-dollar energy corridors and demonstrating willingness to use force to enforce the rules of the existing system.</p>
+      </div>
+      <div>
+        <h3>INSTC &amp; BRI Disruption</h3>
+        <p>Strikes on Bandar Abbas (Iran's main port) specifically targeted the International North-South Transport Corridor — the Russia-Iran-India trade route designed to bypass Western-controlled maritime chokepoints. This corridor, along with the Belt and Road Initiative's Iran segment, was critical to the de-dollarization infrastructure project.</p>
+        <h3>The Rare Earth Angle</h3>
+        <p>China controls 85–90% of global rare earth processing. Trump's Jan 2026 critical minerals EO, Ukraine minerals deal, and Greenland push are attempts to build alternative supply chains before the US-China rivalry peaks — ensuring the US retains technological and military dominance regardless of how the trade relationship evolves.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">⚠️</span> The Risks of the Strategy (If It Is One)</h2>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Overextension Risk — Too Many Simultaneous Fronts</strong><span>High</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:75%; background: var(--red);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Blowback Risk — Post-Regime Iran More Chaotic, Not Compliant</strong><span>High</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:78%; background: var(--red);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Ally Fracture Risk — Europe, NATO Coherence</strong><span>Medium</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:55%; background: var(--yellow);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>China Escalation — Trade Truce Reversal</strong><span>Medium</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:48%; background: var(--yellow);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>Strait of Hormuz Closure — Global Oil Shock</strong><span>Medium</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:42%; background: var(--yellow);"></div></div>
+    </div>
+    <p style="margin-top:16px">The boldest version of the "grand strategy" theory assumes the US can execute simultaneous pressure campaigns across Venezuela, Iran, Greenland, and China while maintaining domestic political support, ally cohesion, and financial stability. History suggests that kind of multi-front strategic compression tends to produce unintended consequences at the periphery — and the Middle East in particular has a long record of confounding Washington's assumptions.</p>
+  </div>
+</div>
+
+<!-- ===== MARKET SIGNALS ===== -->
+<div class="section" id="markets">
+
+  <div class="alert alert-blue">
+    <div class="alert-icon">📊</div>
+    <div class="alert-text"><strong>What markets are pricing in:</strong> As of March 5, 2026, public and private markets have moved sharply to reflect a prolonged conflict posture — not a quick resolution. Defense stocks, gold, and oil risk premiums are all telling the same story. Smart money rotated into these positions well before the Feb 28 strikes.</div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card red">
+      <div class="stat-label">Gold Price</div>
+      <div class="stat-value">$5,500+</div>
+      <div class="stat-sub">All-time high. Intraday peak $5,595 (Jan 29). Goldman target: $5,400.</div>
+    </div>
+    <div class="stat-card yellow">
+      <div class="stat-label">Brent Crude</div>
+      <div class="stat-value">~$80+</div>
+      <div class="stat-sub">Up from ~$70 post-strikes. $10–15 geopolitical risk premium embedded.</div>
+    </div>
+    <div class="stat-card green">
+      <div class="stat-label">Defense ETF (ITA)</div>
+      <div class="stat-value">+14%</div>
+      <div class="stat-sub">iShares US Aerospace &amp; Defense ETF YTD 2026</div>
+    </div>
+    <div class="stat-card green">
+      <div class="stat-label">LMT / NOC / RTX</div>
+      <div class="stat-value">+11–15%</div>
+      <div class="stat-sub">Lockheed, Northrop, RTX YTD gains as of Mar 2026</div>
+    </div>
+    <div class="stat-card yellow">
+      <div class="stat-label">Hormuz Shock Scenario</div>
+      <div class="stat-value">$130+</div>
+      <div class="stat-sub">Brent forecast if Strait of Hormuz fully blocked (Kpler)</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-label">Hedge Fund Net Leverage</div>
+      <div class="stat-value">3-yr High</div>
+      <div class="stat-sub">Gross leverage at record high end-2025 (Goldman Prime Brokerage)</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2><span class="icon">🏭</span> Defense Sector — "The Backlog Story"</h2>
+      <p>The clearest forward-looking signal in public markets is defense contractor <strong>backlogs</strong> — which represent contracted future revenue. These are near all-time highs and growing:</p>
+
+      <div style="margin:14px 0">
+        <div class="risk-bar-wrapper">
+          <div class="risk-bar-label"><strong>Lockheed Martin (LMT) Backlog</strong><span>$194B record</span></div>
+          <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:90%; background: var(--green);"></div></div>
+        </div>
+        <div class="risk-bar-wrapper">
+          <div class="risk-bar-label"><strong>RTX (Raytheon) Backlog</strong><span>$268B record</span></div>
+          <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:95%; background: var(--green);"></div></div>
+        </div>
+        <div class="risk-bar-wrapper">
+          <div class="risk-bar-label"><strong>Northrop Grumman (NOC) Backlog</strong><span>$96B</span></div>
+          <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:75%; background: var(--green);"></div></div>
+        </div>
+      </div>
+
+      <p>RTX's book-to-bill remains above 1.0 — meaning new orders are coming in faster than revenue is recognized. This is the market pricing in <em>sustained conflict spending</em>, not a one-time shock. Lockheed guided 2026 sales to $77.5–$80B; RTX to $92–93B.</p>
+      <div class="callout">
+        <strong>Private market signal:</strong> Record backlogs are a multi-year forward commitment from governments. They are not speculative — they represent signed contracts, many of which predate the Feb 2026 strikes. The smart money read the trajectory correctly in advance.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><span class="icon">🥇</span> Gold — The Macro Fear Gauge</h2>
+      <p>Gold hitting $5,500+ is one of the most significant macro signals in the current environment. The drivers are layered:</p>
+      <h3>Geopolitical Risk Premium</h3>
+      <p>Safe-haven buying accelerated after US-Israel strikes on Iran and the Khamenei assassination. Gold is up ~$155/oz in the immediate post-strike period.</p>
+      <h3>Central Bank Buying</h3>
+      <p>Emerging market central banks — especially China, Russia, and Gulf states — have been accumulating gold at record rates since 2022 as a de-dollarization hedge. Goldman notes these positions are "unlikely to unwind in 2026."</p>
+      <h3>Fiscal Deficit Anxiety</h3>
+      <p>Private investors are using gold to hedge long-term US fiscal sustainability concerns. The combination of defense spending, tax cuts, and entitlements creates structural deficit pressure that weighs on confidence in dollar-denominated assets.</p>
+      <h3>Goldman Sachs Target Revision</h3>
+      <p>Goldman Sachs revised its 2026 gold price target upward to $5,400/oz — one of the most aggressive calls on Wall Street — citing sustained geopolitical uncertainty and continued central bank accumulation as structural supports.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🛢️</span> Oil Markets — Risk Premium vs. Oversupply Tug of War</h2>
+    <div class="grid-2">
+      <div>
+        <h3>The Bull Case (Conflict Scenario)</h3>
+        <p>Brent crude moved from ~$70 to $80+ immediately following the Feb 28 strikes. Kpler and Morgan Stanley models suggest a surge to <strong>$130/barrel</strong> if Iran retaliates by closing or threatening the Strait of Hormuz — through which roughly 20% of global oil supply transits daily. Iranian strikes on Saudi Arabian and Qatari energy infrastructure are already being modeled as tail risks.</p>
+      </div>
+      <div>
+        <h3>The Bear Case (Oversupply Baseline)</h3>
+        <p>J.P. Morgan's base case is Brent averaging ~$60/barrel in 2026, citing OPEC+ oversupply as a structural ceiling. The EIA projects $55/barrel. Trump's "drill baby drill" policy added US supply; OPEC+ members (notably Saudi Arabia and UAE) have been compliant with production discipline but have capacity to add barrels quickly if prices spike.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:16px">
+      <strong>The hedge fund play:</strong> Global macro funds have been running long oil futures as a conflict tail-risk hedge rather than a directional bet — essentially cheap insurance against a Hormuz closure scenario that would be catastrophic for global inflation. The asymmetry is attractive: if conflict stays contained, they lose a small premium; if Hormuz gets blocked, they make multiples.
+    </div>
+
+    <h3 style="margin-top:16px">Energy Equity Rotation</h3>
+    <p>ExxonMobil (XOM) and Chevron (CVX) are up 11%+ since escalation began. The rotation from tech-heavy growth into energy and defense mirrors the playbook seen during Gulf War I (1990–91) and Operation Iraqi Freedom (2003). Airlines, consumer discretionary, and EM equities are the underperformers — facing dual headwinds of fuel costs and risk-off sentiment.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🔮</span> Private Markets — The Divergence Signal</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Hedge Funds — All-In on Volatility</h3>
+        <p>Hedge funds generated an average 11.8% return in 2025 and enter 2026 with record gross leverage. 64% of allocators plan to increase hedge fund exposure — translating to an estimated $24B in additional net inflows. Global macro and commodity-focused funds have been the top performers, benefiting directly from the geopolitical volatility regime.</p>
+        <p style="margin-top:8px">Goldman Sachs prime brokerage data shows net leverage near 3-year highs, suggesting institutional conviction — not just momentum-chasing — behind current positioning.</p>
+      </div>
+      <div>
+        <h3>Private Equity — Pulling Back</h3>
+        <p>In a striking divergence, net interest in private equity and venture capital has fallen to multi-year lows, with private credit softening as well. The Amundi 2026 hedge fund barometer notes this is the sharpest PE-vs-hedge-fund sentiment gap in years.</p>
+        <p style="margin-top:8px">Interpretation: long-horizon illiquid capital is unwilling to underwrite the geopolitical uncertainty premium. Investors want liquidity and the ability to react quickly — exactly what hedge funds offer that PE does not.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:20px">
+      <h3>What This Tells Your Group</h3>
+      <div class="sc-impact-item" style="border-top:none;padding-top:0"><span class="dot">→</span><span><strong>Duration of conflict is being priced as long, not short.</strong> Record defense backlogs are multi-year contracts. Gold's structural support suggests persistent uncertainty, not a spike-and-resolve pattern.</span></div>
+      <div class="sc-impact-item"><span class="dot">→</span><span><strong>Smart money rotated early.</strong> Defense ETFs and gold were rising through 2025 — well before the Feb 28 strikes. This suggests institutional players were positioning on scenario analysis, not reacting to news.</span></div>
+      <div class="sc-impact-item"><span class="dot">→</span><span><strong>The Hormuz scenario is being hedged, not ignored.</strong> Oil futures positioning reflects tail-risk insurance against a scenario that would be the single largest oil supply shock since the 1973 OPEC embargo.</span></div>
+      <div class="sc-impact-item"><span class="dot">→</span><span><strong>Private equity's exit is the counter-signal.</strong> When illiquid capital pulls back from a region and risk regime, it signals the uncertainty horizon is beyond typical 5–7 year fund timelines — a sobering data point.</span></div>
+      <div class="sc-impact-item"><span class="dot">→</span><span><strong>Currency and inflation effects are being underpriced.</strong> Oxford Economics and Morgan Stanley both warn the oil-inflation feedback loop — if triggered by Hormuz disruption — would put central banks in an impossible position: hiking into a war-driven stagflationary shock.</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon">🌐</span> Sector-by-Sector Market Scorecard</h2>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>🟢 Defense &amp; Aerospace (LMT, NOC, RTX, BA)</strong><span>↑ Strong Outperform</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:88%; background: var(--green);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>🟢 Gold &amp; Precious Metals (GLD, NEM, GOLD)</strong><span>↑ All-Time Highs</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:92%; background: var(--green);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>🟡 Energy Majors (XOM, CVX, BP, Shell)</strong><span>↑ Outperform / Risk of Reversal</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:68%; background: var(--yellow);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>🟡 Cybersecurity (CRWD, PANW, FTNT)</strong><span>↑ Elevated — Iran cyber retaliation expected</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:62%; background: var(--yellow);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>🔴 Airlines &amp; Travel (UAL, DAL, AAL)</strong><span>↓ Underperform — Fuel cost headwinds</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:20%; background: var(--red);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>🔴 Consumer Discretionary (broad)</strong><span>↓ Risk-off rotation, inflation pressure</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:22%; background: var(--red);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>🔴 Emerging Market Equities (EEM, VWO)</strong><span>↓ Dollar strength + supply chain disruption</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:18%; background: var(--red);"></div></div>
+    </div>
+    <div class="risk-bar-wrapper">
+      <div class="risk-bar-label"><strong>⬜ Private Equity &amp; VC</strong><span>→ Net interest at multi-year low</span></div>
+      <div class="risk-bar-bg"><div class="risk-bar-fill" style="width:30%; background: var(--muted);"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <h4>📚 Sources</h4>
+  <a href="https://en.wikipedia.org/wiki/2025%E2%80%932026_Iran%E2%80%93United_States_negotiations" target="_blank">Wikipedia: 2025–26 Iran–US Negotiations</a>
+  <a href="https://www.cbsnews.com/news/iran-nuclear-program-what-to-know-trump-negotiations-enrichment/" target="_blank">CBS News: Iran Nuclear Program</a>
+  <a href="https://en.wikipedia.org/wiki/Assassination_of_Ali_Khamenei" target="_blank">Wikipedia: Assassination of Khamenei</a>
+  <a href="https://www.washingtonpost.com/world/2026/03/01/iran-succession-supreme-leader-khamenei/" target="_blank">Washington Post: Iran Succession</a>
+  <a href="https://www.bloomberg.com/news/articles/2026-03-05/iran-s-next-leader-assembly-of-experts-nears-naming-khamenei-s-successor" target="_blank">Bloomberg: Assembly of Experts</a>
+  <a href="https://www.cnbc.com/2026/03/02/iran-china-russia-strikes-assistance-alliance-weapons-missiles-geopolitics-oil-prices-ukraine.html" target="_blank">CNBC: Russia &amp; China on Iran</a>
+  <a href="https://foreignpolicy.com/2026/03/02/iran-war-hezbollah-lebabon-houthis-yemen-iraq-proxies/" target="_blank">Foreign Policy: Proxies</a>
+  <a href="https://en.wikipedia.org/wiki/2026_United_States_intervention_in_Venezuela" target="_blank">Wikipedia: Venezuela Intervention</a>
+  <a href="https://www.energypolicy.columbia.edu/qa-on-us-actions-in-venezuela/" target="_blank">Columbia CGEP: Venezuela Energy</a>
+  <a href="https://www.iranintl.com/en/202601061682" target="_blank">Iran International: Rial Collapse</a>
+  <a href="https://en.wikipedia.org/wiki/2025%E2%80%932026_Iranian_protests" target="_blank">Wikipedia: 2025–26 Iran Protests</a>
+  <a href="https://www.cfr.org/global-conflict-tracker/conflict/confrontation-between-united-states-and-iran" target="_blank">CFR: US–Iran Conflict Tracker</a>
+  <a href="https://armscontrolcenter.org/the-iran-deal-then-and-now/" target="_blank">Arms Control Center: Iran Deal</a>
+  <a href="https://www.aljazeera.com/news/2026/2/4/mediators-propose-framework-for-crucial-iran-us-talks-this-week" target="_blank">Al Jazeera: Mediator Framework</a>
+  <a href="https://www.brookings.edu/articles/after-the-strike-the-danger-of-war-in-iran/" target="_blank">Brookings: After the Strike</a>
+  <a href="https://hornreview.org/2026/01/09/teetering-on-the-precipice-irans-supreme-leader-regional-instability-and-the-geopolitical-dominoes-in-the-middle-east-and-beyond/" target="_blank">Horn Review: Geopolitical Dominoes</a>
+  <a href="https://www.middleeasteye.net/opinion/venezuela-iran-trumps-donroe-doctrine-escalates-us-push-control-worlds-oil" target="_blank">Middle East Eye: Donroe Doctrine</a>
+  <a href="https://www.opendemocracy.net/en/us-venezuela-invasion-us-dollar-trump-oil-maduro-china-iran-russia-petrodollar/" target="_blank">OpenDemocracy: Petrodollar Theory</a>
+  <a href="https://www.cfr.org/expert-brief/venezuela-and-beyond-trumps-america-first-rhetoric-masks-neo-imperialist-streak" target="_blank">CFR: Trump Neo-Imperialism</a>
+  <a href="https://en.wikipedia.org/wiki/American_expansionism_under_Donald_Trump" target="_blank">Wikipedia: US Expansionism Under Trump</a>
+  <a href="https://www.lawfaremedia.org/article/explaining-trump-s-oil-grab" target="_blank">Lawfare: Trump's Oil Grab</a>
+  <a href="https://en.wikipedia.org/wiki/2026_United_States_military_buildup_in_the_Middle_East" target="_blank">Wikipedia: 2026 US Military Buildup</a>
+  <a href="https://www.csis.org/analysis/us-military-middle-east-numbers-behind-trumps-threats-against-iran" target="_blank">CSIS: US Military in Middle East</a>
+  <a href="https://www.fool.com/investing/2026/03/01/iran-war-stock-market-stock-futures-defense-stocks/" target="_blank">Motley Fool: How Stocks React to Iran War</a>
+  <a href="https://www.euronews.com/business/2026/03/03/the-market-winners-which-stocks-are-boosted-by-the-iran-war-so-far" target="_blank">Euronews: Market Winners from Iran War</a>
+  <a href="https://www.cnbc.com/2026/02/28/markets-brace-for-impact-following-us-military-strikes-against-iran.html" target="_blank">CNBC: Markets Brace for Impact</a>
+  <a href="https://www.kpler.com/blog/us-iran-conflict-strait-of-hormuz-crisis-reshapes-global-oil-markets" target="_blank">Kpler: Strait of Hormuz Crisis</a>
+  <a href="https://marquee.gs.com/welcome/news/views-from-the-trading-floor/2026-hedge-fund-industry-outlook-generation-alpha" target="_blank">Goldman Sachs: 2026 Hedge Fund Outlook</a>
+  <a href="https://research-center.amundi.com/article/2026-hedge-fund-investor-barometer" target="_blank">Amundi: Hedge Fund Investor Barometer</a>
+  <a href="https://www.thestreet.com/investing/goldman-sachs-revamps-gold-price-target-for-the-rest-of-2026" target="_blank">TheStreet: Goldman Gold Target</a>
+  <a href="https://www.bruegel.org/first-glance/escalating-us-china-rare-earth-tensions-signal-determination-to-decouple" target="_blank">Bruegel: US-China Rare Earth Decoupling</a>
+  <a href="https://www.oxfordeconomics.com/resource/the-2026-iran-war-an-initial-take-and-implications/" target="_blank">Oxford Economics: 2026 Iran War Implications</a>
+</div>
+
+</div><!-- /main -->
+
+<div class="footer">
+  Iran Geopolitical Intelligence Report · March 5, 2026 · For discussion purposes only<br>
+  All data sourced from public reporting: Reuters, CBS News, IAEA, CFR, Brookings, Al Jazeera, Foreign Policy, Bloomberg, Washington Post
+</div>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
